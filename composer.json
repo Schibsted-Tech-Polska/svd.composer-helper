@@ -1,0 +1,20 @@
+{
+    "name": "schibsted-tech-polska/svd-composer-helper",
+    "description": "Composer Helper",
+    "keywords": ["svd", "composer"],
+    "license": "MIT",
+
+    "autoload": {
+        "psr-0": {
+            "Svd\\ComposerHelper": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "require": {
+    },
+    "target-dir": "Svd/ComposerHelper"
+}
