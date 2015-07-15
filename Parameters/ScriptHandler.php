@@ -55,6 +55,10 @@ class ScriptHandler
                     ));
                     continue;
                 }
+
+                putenv($env . '=' . $parts[$paramKey]);
+
+                $io->write(sprintf('Set parameter to %s', $env));
             }
         }
     }
