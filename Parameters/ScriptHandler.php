@@ -45,8 +45,14 @@ class ScriptHandler
                 continue;
             }
 
+            $trimPath = empty($parameters['trim-path']) ? false : true;
             $parts = parse_url($url);
-            foreach ($parameters as $paramKey => $env) {
+
+            if (!isset($parameters['env-map'])) {
+                throw new InvalidArgumentException(sprintf('The env-map has to be set up under %s.', $key));
+            }
+
+            foreach ($parameters['env-map'] as $paramKey => $env) {
                 if (empty($parts[$paramKey])) {
                     $io->write(sprintf(
                         'Parameter \'%s\' does not exist on extra.svd-composer-helper.parse-url.%s! Skip.',
@@ -54,6 +60,10 @@ class ScriptHandler
                         $key
                     ));
                     continue;
+                }
+
+                if ($trimPath && $paramKey == 'path') {
+                    $parts[$paramKey] = trim($parts[$paramKey], '/');
                 }
 
                 putenv($env . '=' . $parts[$paramKey]);
