@@ -1,5 +1,5 @@
 {
-    "name": "schibsted-tech-polska/svd.composer-helper",
+    "name": "schibsted-tech-polska/svd-composer-helper",
     "description": "Composer Helper",
     "keywords": ["svd", "composer", "heroku", "parameters", "environment", "variables"],
     "license": "MIT",
