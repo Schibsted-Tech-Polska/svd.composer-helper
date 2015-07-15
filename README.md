@@ -33,7 +33,7 @@ If you want to trin database name add `"trim-path": true` under `DATABASE_URI`. 
         },
 "svd-composer-helper": {
     "parse-url": {
-        "MONGOLAB_URI": {
+        "DATABASE_URI": {
             "env-map": {
                 "host": "DATABASE_HOST",
                 "pass": "DATABASE_PASSWORD",
