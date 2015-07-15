@@ -30,7 +30,6 @@ The `DATABASE_URI` is env variable which you want to split.
 
 If you want to trin database name add `"trim-path": true` under `DATABASE_URI`. It should look like this:
 ```json
-        },
 "svd-composer-helper": {
     "parse-url": {
         "DATABASE_URI": {
