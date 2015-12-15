@@ -48,6 +48,14 @@ class ScriptHandler
             $trimPath = empty($parameters['trim-path']) ? false : true;
             $parts = parse_url($url);
 
+            if (substr_count($parts['host'], ',') > 0) {
+                $hosts = explode(',', $parts['host']);
+                $masterHostWithPort = explode(':', $hosts[0]);
+
+                $parts['host'] = $masterHostWithPort[0];
+                $parts['port'] = $masterHostWithPort[1];
+            }
+
             if (!isset($parameters['env-map'])) {
                 throw new InvalidArgumentException(sprintf('The env-map has to be set up under %s.', $key));
             }
